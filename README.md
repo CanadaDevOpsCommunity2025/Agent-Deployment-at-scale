@@ -6,5 +6,5 @@ Team Mentor -
 
 Participant Names - 
 
-     Team Lead - 
-     Team Members - Dipti Skills, Nithin Hames, Satya Velagapudi
+     Team Lead - Satyanaryana Velagapudi
+     Team Members - Dipti Skills, Nithin James 
