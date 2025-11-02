@@ -1,7 +1,7 @@
-# DevOps-Hackathon-Toronto-Team-6
+# Agent Deployment at scale
 Canada DevOps Community of Practice Hackathon Toronto - Team 6 
 
-Project Name - TBD
+Project Name - Agent Deployment at scale
 
 Team Mentor -
 
