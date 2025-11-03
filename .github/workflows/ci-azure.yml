@@ -75,7 +75,7 @@ jobs:
 
       - name: Deploy to AKS with Helm
         run: |
-          helm upgrade --install myapp charts/myapp \
+          helm upgrade --install myapp helm \
             --set JpaGenerator.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/jpagenerator \
             --set JpaGenerator.image.tag=${{ env.IMAGE_TAG }} \
             --set SpPromptConverter.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/sppromptconverter \
