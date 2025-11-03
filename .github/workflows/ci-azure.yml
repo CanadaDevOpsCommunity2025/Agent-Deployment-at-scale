@@ -24,9 +24,17 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Make gradlew executable (JpaGenerator)
+        run: chmod +x gradlew
+        working-directory: ./JpaGenerator
+
       - name: Build JpaGenerator (Gradle)
         run: ./gradlew clean build -x test
         working-directory: ./JpaGenerator
+
+      - name: Make gradlew executable (SpPromptConverter)
+        run: chmod +x gradlew
+        working-directory: ./SpPromptConverter
 
       - name: Build SpPromptConverter (Gradle)
         run: ./gradlew clean build -x test
