@@ -69,16 +69,12 @@ jobs:
           resource-group: resource-group-nithin-us
           cluster-name: aks-nithin-us
 
-      - name: Install Helm 3
+      - name: Install Helm
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-      - name: Add Helm stable repo
-        run: helm repo add stable https://charts.helm.sh/stable
-
-      - name: Helm upgrade / install
+      - name: Deploy to AKS with Helm
         run: |
-          helm repo update
           helm upgrade --install myapp charts/myapp \
             --set JpaGenerator.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/jpagenerator \
             --set JpaGenerator.image.tag=${{ env.IMAGE_TAG }} \
