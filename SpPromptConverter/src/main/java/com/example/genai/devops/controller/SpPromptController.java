@@ -53,7 +53,7 @@ public class SpPromptController {
         HttpEntity<MultiValueMap<String,String>> request = new HttpEntity<>(map, headers);
 
         return restTemplate.exchange(
-                "http://localhost:8080/api/v1",
+                "https://spring-boot-generator-gea7cfhxedfehjcv.canadacentral-01.azurewebsites.net/api/v1",
                 HttpMethod.POST,
                 request,
                 String.class).getBody();
