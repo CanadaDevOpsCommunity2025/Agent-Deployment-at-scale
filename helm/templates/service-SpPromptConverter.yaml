@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "myapp.fullname" . }}-spPromptConverter
+  name: {{ include "myapp.fullname" . }}-sppromptconverter
 spec:
   type: ClusterIP
   selector:
-    app: {{ include "myapp.fullname" . }}-spPromptConverter
+    app: {{ include "myapp.fullname" . }}-sppromptconverter
   ports:
       - port: 80
         targetPort: 8080

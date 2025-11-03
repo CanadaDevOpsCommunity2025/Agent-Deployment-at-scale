@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "myapp.fullname" . }}-spPromptConverter
+  name: {{ include "myapp.fullname" . }}-sppromptconverter
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "myapp.fullname" . }}-spPromptConverter
+      app: {{ include "myapp.fullname" . }}-sppromptconverter
   template:
     metadata:
       labels:
-        app: {{ include "myapp.fullname" . }}-spPromptConverter
+        app: {{ include "myapp.fullname" . }}-sppromptconverter
     spec:
       containers:
-          - name: spPromptConverter
+          - name: sppromptconverter
             image: "{{ .Values.spPromptConverter.image.repository }}:{{ .Values.spPromptConverter.image.tag }}"
             imagePullPolicy: {{ .Values.spPromptConverter.image.pullPolicy }}
             ports:
