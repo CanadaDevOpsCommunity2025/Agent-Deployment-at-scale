@@ -7,3 +7,13 @@ spring:
         chat:
           options:
             deployment-name: gpt-4.1
+  application:
+    name: Spring-Jpa-Generator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
