@@ -73,6 +73,9 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
+      - name: Add Helm stable repo
+        run: helm repo add stable https://charts.helm.sh/stable
+
       - name: Helm upgrade / install
         run: |
           helm repo update
