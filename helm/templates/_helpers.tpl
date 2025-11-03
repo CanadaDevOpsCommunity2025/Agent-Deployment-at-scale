@@ -3,5 +3,5 @@
 {{- end -}}
 
 {{- define "myapp.fullname" -}}
-{{- printf "%s-%s" (include "myapp.name" .) .Release.Namespace | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" (include "myapp.name" .) .Release.Namespace | lower | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
