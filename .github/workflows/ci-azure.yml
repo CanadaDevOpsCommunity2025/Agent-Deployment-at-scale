@@ -53,7 +53,7 @@ jobs:
           context: ./JpaGenerator
           file: ./JpaGenerator/Dockerfile
           push: true
-          tags: ${{ secrets.ACR_LOGIN_SERVER }}/JpaGenerator:${{ env.IMAGE_TAG }}
+          tags: ${{ secrets.ACR_LOGIN_SERVER }}/jpagenerator:${{ env.IMAGE_TAG }}
 
       - name: Build and push SpPromptConverter image
         uses: docker/build-push-action@v4
@@ -61,7 +61,7 @@ jobs:
           context: ./SpPromptConverter
           file: ./SpPromptConverter/Dockerfile
           push: true
-          tags: ${{ secrets.ACR_LOGIN_SERVER }}/SpPromptConverter:${{ env.IMAGE_TAG }}
+          tags: ${{ secrets.ACR_LOGIN_SERVER }}/sppromptconverter:${{ env.IMAGE_TAG }}
 
       - name: Set AKS context
         uses: azure/aks-set-context@v3
@@ -77,7 +77,7 @@ jobs:
         run: |
           helm repo update
           helm upgrade --install myapp charts/myapp \
-            --set JpaGenerator.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/JpaGenerator \
+            --set JpaGenerator.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/jpagenerator \
             --set JpaGenerator.image.tag=${{ env.IMAGE_TAG }} \
-            --set SpPromptConverter.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/SpPromptConverter \
+            --set SpPromptConverter.image.repository=${{ secrets.ACR_LOGIN_SERVER }}/sppromptconverter \
             --set SpPromptConverter.image.tag=${{ env.IMAGE_TAG }}
