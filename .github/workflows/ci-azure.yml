@@ -47,10 +47,10 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'spring-boot-generator'
-          package: ${{ github.workspace }}/JpaGenerator/build/libs/*.jar
+          package: ${{ github.workspace }}/JpaGenerator/build/libs/*SNAPSHOT.jar
 
       - name: Deploy SpPromptConverter to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'sp-prompt-generator'
-          package: ${{ github.workspace }}/SpPromptConverter/build/libs/*.jar
+          package: ${{ github.workspace }}/SpPromptConverter/build/libs/*SNAPSHOT.jar
