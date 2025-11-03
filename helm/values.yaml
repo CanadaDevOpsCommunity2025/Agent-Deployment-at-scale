@@ -1,0 +1,13 @@
+JpaGenerator:
+  image:
+    repository: ""
+    tag: ""
+    pullPolicy: IfNotPresent
+
+SpPromptConverter:
+  image:
+    repository: ""
+    tag: ""
+    pullPolicy: IfNotPresent
+
+replicaCount: 1

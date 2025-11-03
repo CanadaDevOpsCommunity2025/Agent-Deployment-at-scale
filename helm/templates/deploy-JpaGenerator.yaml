@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "myapp.fullname" . }}-jpagenerator
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "myapp.fullname" . }}-jpagenerator
+  template:
+    metadata:
+      labels:
+        app: {{ include "myapp.fullname" . }}-jpagenerator
+    spec:
+      containers:
+          - name: jpagenerator
+            image: "{{ .Values.jpaGenerator.image.repository }}:{{ .Values.jpaGenerator.image.tag }}"
+            imagePullPolicy: {{ .Values.jpaGenerator.image.pullPolicy }}
+            ports:
+              - containerPort: 8080
