@@ -2,7 +2,7 @@ spring:
   ai:
     azure:
       openai:
-        api-key: 86z7jRRHZRkxtVhoaXIWW1FTiRkuaxmxiCQ7gq8xSkmGEVHn00r1JQQJ99BKACHYHv6XJ3w3AAABACOGoN80
+        api-key: YOUR_AZURE_OPENAI_API_KEY_HERE
         endpoint: https://test-open-ai-dep.openai.azure.com/
         chat:
           options:
