@@ -7,5 +7,3 @@ spring:
         chat:
           options:
             deployment-name: gpt-4.1
-server:
-  port: 8081

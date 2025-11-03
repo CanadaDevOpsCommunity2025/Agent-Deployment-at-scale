@@ -28,6 +28,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.ai:spring-ai-starter-model-azure-openai'
 	implementation 'org.springframework.boot:spring-boot-starter'
+	// Apache HttpClient (add this line)
+	implementation 'org.apache.httpcomponents.client5:httpclient5:5.5'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
